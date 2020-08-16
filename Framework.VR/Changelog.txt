@@ -1,0 +1,10 @@
+v0.12 (2020-05-17) - Dystroxic
+- Added Babel config script (scripts/babel.sqf)
+- Added call to Babel config script in initPlayerLocal.sqf (commented out by default)
+
+v0.13 (2020-08-16)
+- Moved all scripts out of mission and into TAW custom mod
+- Removed all references to external mods other than ACE/CBA
+- Renamed groups appropriately (both in-game and in lobby)
+- Renamed lobby units to match renamed groups
+- Remove ACRE modules as radio initialization is now part of the TAW custom mod
