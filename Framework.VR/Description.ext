@@ -16,7 +16,7 @@ respawn = "BASE";
 respawndelay = 5;
 respawnOnStart = -1; // Don't respawn or run the respawn script on start
 
-corpseManagerMode = 0; // Default: 0 for SP, 2 for MP
+corpseManagerMode = 1; // Default: 0 for SP, 2 for MP
 corpseLimit = 50; // Default: 15
 corpseRemovalMinTime = 60; // seconds. Default: 10
 corpseRemovalMaxTime = 3600; // seconds. Default: 3600
@@ -26,4 +26,5 @@ wreckLimit = 20; // Default: 15
 wreckRemovalMinTime = 120; // seconds. Default: 10
 wreckRemovalMaxTime = 3600; // seconds. Default: 36000 (10 hours)
 
+// In order for the garbage collector to remove a corpse or wreck, there must be no players within this distance
 minPlayerDistance = 50; // meters. Default: 0
