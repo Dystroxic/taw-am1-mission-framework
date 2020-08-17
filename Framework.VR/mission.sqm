@@ -8,7 +8,7 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=644;
+		nextID=645;
 	};
 	class MarkerIDProvider
 	{
@@ -253,7 +253,7 @@ class Mission
 				class Attribute1
 				{
 					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable [""taw_am1_mechanics_crateFillerSpawn"", _value, true];};";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
@@ -586,7 +586,7 @@ class Mission
 				class Attribute0
 				{
 					property="taw_am1_mechanics_isCrateFiller";
-					expression="if (_value) then {_this setVariable [""taw_am1_mechanics_isCrateFiller"", true, true];};";
+					expression="if (_value) then {_this setVariable ['taw_am1_mechanics_isCrateFiller', true, true];};";
 					class Value
 					{
 						class data
@@ -605,7 +605,7 @@ class Mission
 				class Attribute1
 				{
 					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable [""taw_am1_mechanics_crateFillerSpawn"", _value, true];};";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
@@ -644,7 +644,7 @@ class Mission
 				class Attribute0
 				{
 					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable [""taw_am1_mechanics_crateFillerSpawn"", _value, true];};";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
@@ -682,7 +682,7 @@ class Mission
 				class Attribute2
 				{
 					property="taw_am1_mechanics_isCrateFiller";
-					expression="if (_value) then {_this setVariable [""taw_am1_mechanics_isCrateFiller"", true, true];};";
+					expression="if (_value) then {_this setVariable ['taw_am1_mechanics_isCrateFiller', true, true];};";
 					class Value
 					{
 						class data
@@ -721,7 +721,7 @@ class Mission
 				class Attribute0
 				{
 					property="taw_am1_mechanics_isCrateFiller";
-					expression="if (_value) then {_this setVariable [""taw_am1_mechanics_isCrateFiller"", true, true];};";
+					expression="if (_value) then {_this setVariable ['taw_am1_mechanics_isCrateFiller', true, true];};";
 					class Value
 					{
 						class data
@@ -740,7 +740,7 @@ class Mission
 				class Attribute1
 				{
 					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable [""taw_am1_mechanics_crateFillerSpawn"", _value, true];};";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
@@ -7552,7 +7552,7 @@ class Mission
 				class Attribute0
 				{
 					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable [""taw_am1_mechanics_crateFillerSpawn"", _value, true];};";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
