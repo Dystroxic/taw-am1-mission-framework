@@ -16,6 +16,9 @@ respawn = "BASE";
 respawndelay = 5;
 respawnOnStart = -1; // Don't respawn or run the respawn script on start
 
+// Logged-in admins can use the debug console
+enableDebugConsole = 1;
+
 corpseManagerMode = 1; // Default: 0 for SP, 2 for MP
 corpseLimit = 50; // Default: 15
 corpseRemovalMinTime = 60; // seconds. Default: 10
