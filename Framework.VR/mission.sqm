@@ -8,7 +8,7 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=782;
+		nextID=784;
 	};
 	class MarkerIDProvider
 	{
@@ -38,13 +38,15 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"ace_explosives",
-	"cba_xeh"
+	"cba_xeh",
+	"po_factions_me",
+	"ace_refuel"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
 			className="A3_Supplies_F_Orange";
@@ -124,6 +126,19 @@ class AddonsMetaData
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item12
+		{
+			className="po_factions_me";
+			name="po_factions_me";
+			author="Leight, Keeway";
+		};
+		class Item13
+		{
+			className="ace_refuel";
+			name="ACE3 - Refuel";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
@@ -253,25 +268,6 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
 					property="ammoBox";
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
 					class Value
@@ -289,7 +285,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute3
+				class Attribute2
 				{
 					property="ace_arsenal_attribute";
 					expression="if (!is3DEN) then {[_this, +_value] call ace_arsenal_fnc_attributeInit}";
@@ -338,7 +334,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				nAttributes=3;
 			};
 		};
 		class Item1
@@ -406,8 +402,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
+					property="taw_am1_crateFiller_isCrateFiller";
+					expression="if (_value) then {_this setVariable ['taw_am1_crateFiller_isCrateFiller', true, true];};";
 					class Value
 					{
 						class data
@@ -416,10 +412,10 @@ class Mission
 							{
 								type[]=
 								{
-									"STRING"
+									"BOOL"
 								};
 							};
-							value="";
+							value=1;
 						};
 					};
 				};
@@ -427,64 +423,6 @@ class Mission
 			};
 		};
 		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4773,6.3620372,4383};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="crate_filler_2";
-			};
-			id=474;
-			type="B_Slingload_01_Cargo_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F"",""FirstAidKit""],[2,4,2,20]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[48,12,12,12,12,12,4,4,12,6,4,12,12,4,4,4,4]],[[""Laserdesignator"",""acc_flashlight""],[2,4]],[[""B_Kitbag_mcamo""],[4]]],false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
@@ -503,8 +441,27 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
+					property="taw_am1_crateFiller_isCrateFiller";
+					expression="if (_value) then {_this setVariable ['taw_am1_crateFiller_isCrateFiller', true, true];};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="taw_am1_crateFiller_crateFillerSpawn";
+					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_crateFiller_crateFillerSpawn', _value, true];};";
 					class Value
 					{
 						class data
@@ -520,10 +477,10 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Marker";
 			position[]={4763,5,4391};
@@ -533,7 +490,7 @@ class Mission
 			angle=270.12201;
 			id=480;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Marker";
 			position[]={4763,5,4387};
@@ -543,7 +500,7 @@ class Mission
 			angle=270.12201;
 			id=481;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -633,7 +590,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Object";
 			class PositionInfo
@@ -648,31 +605,8 @@ class Mission
 			};
 			id=642;
 			type="Land_JumpTarget_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="taw_am1_mechanics_crateFillerSpawn";
-					expression="if !(_value isEqualTo '') then {_this setVariable ['taw_am1_mechanics_crateFillerSpawn', _value, true];};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=1;
-			};
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -762,7 +696,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Group";
 			side="West";
@@ -1552,7 +1486,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1642,7 +1576,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Group";
 			side="West";
@@ -2708,7 +2642,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Group";
 			side="West";
@@ -3199,7 +3133,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Group";
 			side="West";
@@ -3956,7 +3890,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Group";
 			side="West";
@@ -4713,7 +4647,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Group";
 			side="West";
@@ -5393,7 +5327,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item20
+		class Item19
 		{
 			dataType="Group";
 			side="West";
@@ -6073,7 +6007,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item21
+		class Item20
 		{
 			dataType="Group";
 			side="West";
@@ -6981,7 +6915,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item22
+		class Item21
 		{
 			dataType="Group";
 			side="West";
@@ -7807,7 +7741,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item23
+		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -7897,7 +7831,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -7987,7 +7921,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item25
+		class Item24
 		{
 			dataType="Group";
 			side="West";
@@ -8354,7 +8288,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item26
+		class Item25
 		{
 			dataType="Group";
 			side="Civilian";
@@ -8526,7 +8460,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item27
+		class Item26
 		{
 			dataType="Marker";
 			position[]={4763,5,4383.25};
@@ -8535,6 +8469,83 @@ class Mission
 			colorName="ColorCIV";
 			angle=270.12201;
 			id=769;
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4773,6.3624501,4383};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="crate_filler_2";
+			};
+			id=783;
+			type="B_Slingload_01_Fuel_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="taw_am1_crateFiller_isCrateFiller";
+					expression="if (_value) then {_this setVariable ['taw_am1_crateFiller_isCrateFiller', true, true];};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-10;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F"",""FirstAidKit""],[2,4,2,20]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[48,12,12,12,12,12,4,4,12,6,4,12,12,4,4,4,4]],[[""Laserdesignator"",""acc_flashlight""],[2,4]],[[""B_Kitbag_mcamo""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=3;
+			};
 		};
 	};
 	class Connections
